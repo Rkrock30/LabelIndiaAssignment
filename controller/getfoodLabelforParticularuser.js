@@ -7,7 +7,6 @@ async function getAllFoodLabelForParticularUser(req, res) {
     let countFoodLable = await foodLabel.find({ createdBy: userId });
 
     if (countFoodLable) {
-      console.log(countFoodLable);
       httpResponseSuccessHandler(
         res,
         200,

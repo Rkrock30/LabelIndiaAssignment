@@ -1,7 +1,6 @@
 const reviewSchema = require("../model/review").Review;
 const foodLabel = require("../model/foodLabel").foodLabel;
 const approvalSchema = require("../model/approval").approval;
-//onst product = new mongoose.model("product")
 
 async function submitForReview(req, res) {
   try {
@@ -10,7 +9,11 @@ async function submitForReview(req, res) {
 
     let alreadyPresentForApproval = await reviewSchema.find({ label: labelId });
     if (alreadyPresentForApproval.length > 0) {
-      console.log("Hii");
+      return httpResponseSuccessHandler(
+        res,
+        200,
+        "It is already sent for review"
+      );
     } else {
       let countFoodLable = await reviewSchema.find().count();
       let foodLabelId = countFoodLable > 0 ? countFoodLable + 1 : 1;
@@ -32,7 +35,6 @@ async function submitForReview(req, res) {
             reviewId: foodLabelId,
           }
         );
-        console.log(createProd);
         httpResponseSuccessHandler(res, 200, "Data created Successfully", [
           createProd,
         ]);

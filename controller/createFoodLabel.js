@@ -1,6 +1,5 @@
 const foodLabel = require("../model/foodLabel").foodLabel;
 const validatePayload = require("../utils/bodyValidation").bodyValidation;
-//onst product = new mongoose.model("product")
 
 async function createfoodLabel(req, res) {
   try {
