@@ -15,7 +15,7 @@ async function loginUser(req, res) {
   try {
     const valSchema = Joi.object()
       .keys({
-        username: Joi.string().required().allow(null, ""),
+        username: Joi.string().email().required().allow(null, ""),
         password: Joi.string()
           .min(8)
           .regex(

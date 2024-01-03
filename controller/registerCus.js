@@ -17,7 +17,7 @@ async function registerUser(req, res) {
         firstName: Joi.string().required().allow(null, ""),
         lastName: Joi.string().required().allow(null, ""),
         mobileNo: Joi.number().required().allow(null, ""),
-        email: Joi.string().required().allow(null, ""),
+        email: Joi.string().email().required().allow(null, ""),
         password: Joi.string()
           .min(8)
           .regex(
