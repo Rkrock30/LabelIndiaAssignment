@@ -38,7 +38,7 @@ async function getAllFoodLabel(req, res) {
           created_on: countFoodLable[i].created_on,
         });
       }
-      httpResponseSuccessHandler(res, 200, "Data created Successfully", arr);
+      httpResponseSuccessHandler(res, 200, "Data Fetched Successfully", arr);
     }
   } catch (error) {
     console.log(error);

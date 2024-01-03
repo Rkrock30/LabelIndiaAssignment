@@ -38,7 +38,7 @@ async function getParticularFoodlabel(req, res) {
       httpResponseSuccessHandler(
         res,
         200,
-        "Data created Successfully",
+        "Data fetched Successfully",
         labelObj
       );
     }
